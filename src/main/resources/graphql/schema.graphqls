@@ -1,5 +1,4 @@
 # Scalar Types
-scalar Date
 scalar DateTime
 
 type Query {

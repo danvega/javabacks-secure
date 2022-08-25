@@ -5,7 +5,6 @@ import com.example.javabucks.service.OrderService;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
-import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -17,9 +16,8 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    // https://docs.spring.io/spring-graphql/docs/current/reference/html/#controllers-schema-mapping-signature
     @QueryMapping
-    public List<Order> findAllOrders(Principal principal) {
-        return orderService.findAllByUsername(principal.getName());
+    public List<Order> findAllOrders() {
+        return orderService.findAll();
     }
 }
