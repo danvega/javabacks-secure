@@ -18,7 +18,7 @@ public class OrderController {
     }
 
     @QueryMapping
-    public List<Order> findAllOrders(Principal principal) {
-        return orderService.findAllByUsername(principal.getName());
+    public List<Order> findAllOrders() {
+        return orderService.findAll();
     }
 }

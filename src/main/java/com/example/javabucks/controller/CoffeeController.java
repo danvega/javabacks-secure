@@ -26,14 +26,11 @@ public class CoffeeController {
         log.info("All Coffees: {}",coffeeService.findAll());
     }
 
-
-    @Secured("ROLE_USER")
     @QueryMapping(value = "allCoffee")
     public List<Coffee> findAll() {
         return coffeeService.findAll();
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @MutationMapping(value = "createCoffee")
     public Coffee create(@Argument String name, @Argument Size size) {
         return coffeeService.create(name,size);
